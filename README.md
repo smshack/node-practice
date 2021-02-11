@@ -18,3 +18,12 @@ npm init
 yarn add express
 ```
 
+
+# 2. 몽고 DB 연결
+- 리눅스 서버에 생성한 mongo에 해당 서버를 연결한다
+
+## 2.1 몽구스 mongosee 설치
+```angular2html
+yarn add mongoose
+```
+
