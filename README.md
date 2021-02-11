@@ -98,6 +98,7 @@ app.get('/register',(req,res)=>{
 
 # 5. 비밀번호 bcrypt 암호화 하기
 yarn add bcrypt
+
 https://www.npmjs.com/package/bcrypt
 1. register 라우터로 가기
 2. 유저정보들을 데이터 베이스에 저장하기 전이 암호화할 타이밍
@@ -110,9 +111,43 @@ https://www.npmjs.com/package/bcrypt
 
 # 6. 로그인 시 인증 토큰 생생
 jsonwebtoken
+
 yarn add jsonwebtoken
+
 https://www.npmjs.com/package/jsonwebtoken
-로그인 라우드 만들기
+로그인 라우트 만들기
 1. 데이터 베이스에서 요청한 Email 찾기 User.findOne()
 2. 데이터베이스에서 요청한 E-mail이 있다면 비밀번호가 같은지 확인
 3. 비밀번호 까지 같다면 Token을 생성
+
+
+
+# 6. auth 기능 만들기
+###why?? 
+우리가 사이트 이용시 어떤 페이지는 로그인된 유저만 이용가능
+
+어떤 페이지는 로그인된 유저만 사용할 수 있는 페이지가 있음 그런 부분을 나눠주기 위해서 필요한 과정
+
+### how ??
+토큰을 생성 후 유저 정보에 넣고 
+1. 서버쪽에서는 DB에 넣고
+2. 클라이언트에는 token에 저장하였음
+
+이 두 토큰이 맞는지 체크를 하면 됨
+클라이언트에서 cookie에 담겨있는 token user_id 정보 와 DB의 user_id를 비교
+
+
+## 프로세스 진행 과정
+1. Cookie에 저장된 Token을 Server로 가져와서 복호화한다.
+2. 복호화 하여 나오는 UserID를 이용해 DB 에서 User Collection의 유저를 찾은 후 크키에서 받아온 token이 유저도 갖고 있는지 확인
+    - 쿠키가 일치 하지 않는다면 => 인증 실패
+    - 쿠키가 일치한다면 그 해당하는 유저의 정보들을 선별해서 프론트 엔드로 보내준다
+    
+
+
+
+
+
+
+
+
