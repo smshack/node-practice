@@ -94,3 +94,25 @@ app.get('/register',(req,res)=>{
     })
 })
 ```
+
+
+# 5. 비밀번호 bcrypt 암호화 하기
+yarn add bcrypt
+https://www.npmjs.com/package/bcrypt
+1. register 라우터로 가기
+2. 유저정보들을 데이터 베이스에 저장하기 전이 암호화할 타이밍
+3. bcrypt 공식 사이트 보면서 진행
+    - bcrypt 가져오기
+    - salt 생성
+    - salt 사용 비밀번호 암호화
+    - 비밀번호를 바꿀 때만 작동할 수 있도록 조건 걸어주기
+
+
+# 6. 로그인 시 인증 토큰 생생
+jsonwebtoken
+yarn add jsonwebtoken
+https://www.npmjs.com/package/jsonwebtoken
+로그인 라우드 만들기
+1. 데이터 베이스에서 요청한 Email 찾기 User.findOne()
+2. 데이터베이스에서 요청한 E-mail이 있다면 비밀번호가 같은지 확인
+3. 비밀번호 까지 같다면 Token을 생성
