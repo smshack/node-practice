@@ -31,7 +31,7 @@ app.get('/register',(req,res)=>{
     // 그것을 데이터 베이스에 넣어준다
     const user = new User({
         "name":"test",
-        "email":"5432tat@naver.com",
+        "email":"54tat@naver.com",
         "password":"1234567"
     })
 
@@ -44,6 +44,7 @@ app.get('/register',(req,res)=>{
     })
 })
 
+console.log('hihi')
 
 
 app.listen(port, () => {
