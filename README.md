@@ -35,3 +35,62 @@ yarn add mongoose
 ### 스키마
 몽고 DB에 생성될 컬렉션의 필드 및 설정 
 
+```angular2html
+const userSchema =mongoose.Schema({
+    name:{
+        type:String,
+        maxlength:50
+    },
+    email:{
+        type:String,
+        trim:true,
+        unique:1
+    },
+    password:{
+        type:String,
+        maxlength:50
+    },
+    role:{
+        type:Number,
+        default:0
+    },
+    image:{
+        type:String
+    },
+    token:{
+        type:String
+    }
+    tokenExp:{
+        type:Number
+    }
+})
+
+const User =mongoose.model('User',userSchema)
+
+module.exports={User}
+```
+생성 후 다른 파일에서 사용할 수 있도록 export 해줘야 함 
+
+# 4. DB 에 데이터 저장하기
+sava로 해당 데이터를 저장할 수 있도록 한다
+```angular2html
+const {User} = require("./models/User")
+
+app.get('/register',(req,res)=>{
+    // 회원 가입할 때 필요한 정보들을 client에서 가져오면
+    // 그것을 데이터 베이스에 넣어준다
+    const user = new User({
+        "name":"test",
+        "email":"5432tat@naver.com",
+        "password":"1234567"
+    })
+
+    user.save((err,doc)=>{
+        if(err) {
+            console.log(err)
+        }else{
+            console.log('success data save')
+        }
+    })
+})
+```
