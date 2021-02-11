@@ -23,7 +23,15 @@ yarn add express
 - 리눅스 서버에 생성한 mongo에 해당 서버를 연결한다
 
 ## 2.1 몽구스 mongosee 설치
+https://www.npmjs.com/package/mongoose
 ```angular2html
 yarn add mongoose
 ```
+
+# 3. 스키마 모델 생성
+### 모델
+스키마를 감싸주는 역할
+
+### 스키마
+몽고 DB에 생성될 컬렉션의 필드 및 설정 
 
