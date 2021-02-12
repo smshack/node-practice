@@ -159,6 +159,79 @@ https://www.npmjs.com/package/jsonwebtoken
 DB 확인 로그 아웃 하고 DB를 확인하여 토큰이 사라진걸 확인
 
 
+# 9. 리액트 시작하기
+### webpack
+복잡하게 된 사이트 구성을 묶어주는 개념
+많은 모듈들을 합해서 간단하게 만들어 주는 개념
+
+### babel
+javascript 최신 기능이 오래된 브라우저에서 동작할 수 있도록 변환 시켜줌
+
+npx create-react-app
+
+config
+middleware
+models
+index.js를 모두 server 디렉터리를 만들어 넣어준
+- 리액트 기본 틀 다운로드
+npx create-react-app .
 
 
+# 10. 리액트 앱 구조 분석
+### 1. Redux를 위한 디렉터리
+- _action
+- _reducer
 
+### 2. Page 디렉터리
+- componenets/views
+
+### 3. 해당 페이지에 관련된 css 파일이나, component를 넣는다
+- components/views/Sections
+
+### 4. Routing 관련 처리
+- App.js
+
+### 5. 환경 변수 정리
+- Confing.js
+
+### 6. higher Order Component
+- hoc
+
+### 7. utils 여러군데 사용될 수 있는 메소드 등 정리
+- utils
+
+
+# 11. 페이지 Routing 하기
+yarn add react-router-dom
+https://reactrouter.com/web/guides/quick-start
+페이지를 분기 할 수 있도록 페이지를 라우팅 해준다
+
+```angular2html
+# 라우팅 페이지 만들기
+## 페이지 생성
+import React from 'react'
+
+function LodingPage(){
+return (
+<div>
+LodingPage
+</div>
+)
+}
+
+export default LodingPage
+
+## 페이지 연결
+import LandingPage from './components/views/LandingPage/LandingPage'
+
+## 라우팅 설정
+<Router>
+   <div>
+      <NavBar/>
+      <Switch>
+         <Route exact path="/landingpage" component={LandingPage} />
+      </Switch>
+      <Footer/>
+   </div>
+</Router>
+```
