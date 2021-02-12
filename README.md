@@ -235,3 +235,22 @@ import LandingPage from './components/views/LandingPage/LandingPage'
    </div>
 </Router>
 ```
+
+# 12.데이터 흐름을 알아보자 (Data Request, Response Flow Axios)
+## DB <=> 서버 <=> 클라이언트
+
+클라이언트에서 서버로 요청을 보낼 때 axios를 사용해 보냄
+- Axios는 브라우저, Node.js를 위한 Promise API를 활용하는 HTTP 비동기 통신 라이브러리
+- 쉽게 말해서 백엔드랑 프론트엔드랑 통신을 쉽게하기 위해 Ajax와 더불어 사용
+
+
+  https://velog.io/@zofqofhtltm8015/Axios-%EC%82%AC%EC%9A%A9%EB%B2%95-%EC%84%9C%EB%B2%84-%ED%86%B5%EC%8B%A0-%ED%95%B4%EB%B3%B4%EA%B8%B0
+
+
+  https://github.com/axios/axios
+
+  https://xn--xy1bk56a.run/axios/guide/api.html
+
+yarn add axios
+
+
