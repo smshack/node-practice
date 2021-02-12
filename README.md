@@ -203,7 +203,9 @@ npx create-react-app .
 
 # 11. 페이지 Routing 하기
 yarn add react-router-dom
+
 https://reactrouter.com/web/guides/quick-start
+
 페이지를 분기 할 수 있도록 페이지를 라우팅 해준다
 
 ```angular2html
@@ -254,3 +256,18 @@ import LandingPage from './components/views/LandingPage/LandingPage'
 yarn add axios
 
 
+# 13. CORS 이슈 Proxy SERVER 설정
+yarn add http-proxy-middleware
+
+https://www.npmjs.com/package/http-proxy-middleware
+
+src/setupProxy.js 파일 생성
+```angular2html
+const express = require('express');
+const { createProxyMiddleware } = require('http-proxy-middleware');
+ 
+const app = express();
+ 
+app.use('/api', createProxyMiddleware({ target: 'http://www.example.org', changeOrigin: true }));
+app.listen(3000);
+```

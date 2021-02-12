@@ -5,10 +5,7 @@ const bodyParser =require('body-parser')
 const cookieParser =require('cookie-parser')
 const {auth} =require('./middleware/auth')
 const {User} = require("./models/User")
-const dummuy={
-    "email":"54tat@naver.com",
-    "password":"1234567"
-}
+
 const mongoose = require('mongoose')
 
 // 어플리케이션의 데이터를 분석해서 가져옴
