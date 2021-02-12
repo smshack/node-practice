@@ -271,3 +271,14 @@ const app = express();
 app.use('/api', createProxyMiddleware({ target: 'http://www.example.org', changeOrigin: true }));
 app.listen(3000);
 ```
+
+## 14. Concurrently 두 서버 한번에 켜기
+yarn add concurrently
+
+```angular2html
+ "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server-start": "node ./server/index.js",
+    "dev":"concurrently \"npm run server-start\" \"npm run start --prefix client\""
+  },
+```

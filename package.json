@@ -5,12 +5,14 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server-start": "node ./server/index.js"
+    "server-start": "node ./server/index.js",
+    "dev":"concurrently \"npm run server-start\" \"npm run start --prefix client\""
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.0.0",
+    "concurrently": "^5.3.0",
     "cookie-parser": "^1.4.5",
     "cookieparser": "^0.1.0",
     "express": "^4.17.1",
