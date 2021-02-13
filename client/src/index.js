@@ -3,10 +3,24 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import 'antd/dist/antd.css';
+import {Provider} from 'react-redux';
+import {applyMiddleware, createStore} from 'redux';
+import promiseMiddleware from 'redux-promise';
+import ReduxThunk from 'redux-thunk';
+import Reducer from './_reducers';
+
+// 리덕스는 그냥 객체를 받는것 밖에 못하므로 함수와 promise를 받을 수 있게 설정
+const createStoreWithMiddleware = applyMiddleware(promiseMiddleware,ReduxThunk)(createStore)
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+      <Provider store={createStoreWithMiddleware(Reducer,
+          window.__REDUX_DEVTOOLS_EXTENSION__&&
+          window.__REDUX_DEVTOOLS_EXTENSION__()
+      )}>
+          <App />
+      </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

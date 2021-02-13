@@ -40,7 +40,7 @@ app.post('/register',(req,res)=>{
     })
 })
 
-app.post('/login',(req,res)=>{
+app.post('/api/users/login',(req,res)=>{
     //1. 요청된 이메일을 데이터베이스에 있는지 확인
     User.findOne({email:req.body.email},(err,user)=>{
         if(!user){
