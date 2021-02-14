@@ -28,12 +28,14 @@ app.get('/', (req, res) => {
     res.send('Hello World 안녕하세요 파일이 변경 되었습니다!')
 })
 
-app.post('/register',(req,res)=>{
+app.post('/api/users/register',(req,res)=>{
     // 회원 가입할 때 필요한 정보들을 client에서 가져오면
     // 그것을 데이터 베이스에 넣어준다
+    // console.log(req.body)
     const user =new User(req.body)
-    user.save((err,doc)=>{
-        if(err) return res,json({success:false,err})
+    user.save((err,userInfo)=>{
+        console.log(userInfo)
+        if(err) return res.json({success:false,err})
         return res.status(200).json({
             succsee:true
         })
@@ -42,6 +44,7 @@ app.post('/register',(req,res)=>{
 
 app.post('/api/users/login',(req,res)=>{
     //1. 요청된 이메일을 데이터베이스에 있는지 확인
+
     User.findOne({email:req.body.email},(err,user)=>{
         if(!user){
             return res.json({

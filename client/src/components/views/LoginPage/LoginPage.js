@@ -3,6 +3,7 @@ import {useDispatch} from 'react-redux'
 import {loginUser } from '../../../_action/user_action'
 
 function LoginPage(props){
+
     const dispatch =useDispatch()
 
     const [Email, setEmail] =useState("")
@@ -36,9 +37,6 @@ function LoginPage(props){
             })
 
     }
-    // useEffect(()=>{
-    //     console.log(Email,Password)
-    // },[Email,Password])
 
     return (
         <div style={{display:"flex", justifyContent:'center', alignItems:'center', width:'100%', height:'100vh'}}>
