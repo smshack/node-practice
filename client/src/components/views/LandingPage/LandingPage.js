@@ -1,6 +1,6 @@
 import React,{useEffect} from 'react'
 import axios from 'axios'
-
+import {withRouter} from 'react-router-dom'
 function LodingPage(props){
 
     useEffect(() =>{
@@ -25,4 +25,4 @@ function LodingPage(props){
     )
 }
 
-export default LodingPage
+export default withRouter(LodingPage)

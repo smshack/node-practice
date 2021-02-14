@@ -1,6 +1,7 @@
 import React,{useState,useEffect} from 'react'
 import {useDispatch} from 'react-redux'
 import {registerUser } from '../../../_action/user_action'
+import {withRouter} from 'react-router-dom'
 function Register(props){
     const dispatch =useDispatch()
 
@@ -67,4 +68,4 @@ function Register(props){
     )
 }
 
-export default Register
+export default withRouter(Register)

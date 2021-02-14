@@ -69,7 +69,7 @@ app.post('/api/users/login',(req,res)=>{
 })
 
 
-app.get('/api.users/auth',auth,(req,res)=>{
+app.get('/api/users/auth',auth,(req,res)=>{
     // 여기까지 미들웨어를 통과해 왔다는 것은
     // 인증이 true라는 뜻
     // role이 0 인 유저는 일반 유저 0이 아니면 관리자
